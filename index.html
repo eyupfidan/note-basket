@@ -13,22 +13,32 @@
 </head>
   <body>
     <header class="header">
-      <h1 class="main-title"> Note Basket </h1>
-      <form action="#">
-        <input type="text" class="input-task" placeholder="Enter the task">
-        <button type="submit">
+      <h1 class="main-title">Note Basket</h1>
+    </header>
+      <form class="task-form" action="#">
+        <input type="text" class="form-item input-task" placeholder="Enter the task">
+        <button type="submit" class="form-item btn-add-task">
           <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
       </form>
-    </header>
-    <div class="container">
+ 
+    <div class="container container-task">
       <ul class="task-list">
-        <div class="task-item">
-          <li class="task">Go to Market</li>
-          <button class="task-btn complete-task">
+        <div class="task-item ">
+          <li class="task-title">Go to Market</li>
+          <button class="task-btn btn-complete-task">
             <i class="fa fa-check" aria-hidden="true"></i>
           </button>
-          <button class="task-btn remove-task">
+          <button class="task-btn btn-remove-task">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="task-item complete-task">
+          <li class="task-title">Go to Market</li>
+          <button class="task-btn btn-complete-task">
+            <i class="fa fa-check" aria-hidden="true"></i>
+          </button>
+          <button class="task-btn btn-remove-task">
             <i class="fa fa-times" aria-hidden="true"></i>
           </button>
         </div>
