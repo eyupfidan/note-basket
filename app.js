@@ -6,20 +6,18 @@ const taskList = document.querySelector('.task-list')
 addNewTaskBtn.addEventListener('click', addTask)
 taskList.addEventListener('click', completeRemoveTask)
 
-function completeRemoveTask (e) {
+function completeRemoveTask(e) {
     const tickElement = e.target
 
-    if(tickElement.classList.contains('btn-complete-task'))
-    {
+    if (tickElement.classList.contains('btn-complete-task')) {
         tickElement.parentElement.classList.toggle('complete-task')
     }
-    if(tickElement.classList.contains('btn-remove-task'))
-    {
+    if (tickElement.classList.contains('btn-remove-task')) {
         tickElement.parentElement.classList.toggle('hide')
-        tickElement.parentElement.addEventListener('transitionend',() => {
+        tickElement.parentElement.addEventListener('transitionend', () => {
             tickElement.parentElement.remove()
         })
-       
+
     }
 }
 
@@ -49,10 +47,26 @@ function addTask(e) {
     removeBtn.innerHTML = '<i class="fa fa-times" aria-hidden="true"></i>'
     taskDiv.appendChild(removeBtn)
 
+    //Save data localstorage
+    saveLocalStorage(newTask.value)
+
     //Clear input value 
     newTask.value = ""
 
     //add list in div
     taskList.appendChild(taskDiv)
-  
+
+}
+
+function saveLocalStorage(task) {
+let tasks
+
+if(localStorage.getItem('tasks') === null) {
+    tasks = []
+} else {
+    tasks = JSON.parse(localStorage.getItem('tasks'))
+}
+
+tasks.push(task)
+localStorage.setItem('tasks',JSON.stringify(tasks))
 }
