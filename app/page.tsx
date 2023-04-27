@@ -1,12 +1,7 @@
 // pages/index.js
 'use client'
 import TodoMain from '../components/TodoMain';
-import Script from 'next/script';
 import Head from 'next/head';
-import Link from 'next/link'
-
-
-
 
 export default function Home() {
   return (
