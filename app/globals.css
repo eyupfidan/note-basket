@@ -2,12 +2,12 @@
   --main-color: rgba(41, 128, 185, 1);
   --main-color-light: rgba(41, 128, 185, 0.5);
   --accent-color: rgba(243, 156, 18, 1);
-  --accent-color: rgba(243, 156, 18, 0.5);
+  --accent-color-light: rgba(243, 156, 18, 0.5);
 }
 
-
-
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -15,17 +15,14 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-image: linear-gradient(to bottom right,
-          var(--main-color),
-          var(--main-color-light));
-  background-repeat: no-repeat;
+  background: linear-gradient(to bottom right, var(--main-color), var(--main-color-light)) no-repeat;
   min-height: 100vh;
 }
 
 .main-title {
   font-size: 2rem;
   font-weight: 600;
-  color: white;
+  color: #fff;
 }
 
 .header,
@@ -41,25 +38,26 @@ body {
   padding: 0.5rem;
   font-size: 1.5rem;
   border: none;
-  background-color: white;
+  background-color: #fff;
   outline: none;
 }
 
 .btn-add-task {
   color: var(--accent-color-light);
   cursor: pointer;
+  transition: color 0.3s ease-in-out;
 }
 
-.btn-add-task>i.fa.fa-plus {
+.btn-add-task > i.fa.fa-plus {
   transition: transform 0.7s ease-in-out;
-}
-
-.btn-add-task>i.fa.fa-plus:hover {
-  transform: rotate(360deg);
 }
 
 .btn-add-task:hover {
   color: var(--main-color);
+}
+
+.btn-add-task > i.fa.fa-plus:hover {
+  transform: rotate(360deg);
 }
 
 .container-task {
@@ -78,8 +76,8 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0.9rem;
-  background-color: white;
-  transition: 0.5s ease-in-out;
+  background-color: #fff;
+  transition: background-color 0.5s ease-in-out;
 }
 
 .task-title {
@@ -115,4 +113,3 @@ body {
 .hide {
   transform: scale(0);
 }
-
