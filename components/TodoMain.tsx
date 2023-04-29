@@ -57,9 +57,6 @@ const TodoMain = () => {
             <span className="task-title" onClick={() => handleTaskCompletion(task)}>
               {task.startsWith('✔️') ? task.slice(2) : task}
             </span>
-            <button className="task-btn btn-complete-task">
-              <i className="fa fa-check" aria-hidden="true"></i>
-            </button>
             <button className="task-btn btn-remove-task" onClick={() => handleTaskRemoval(task)}>
               <i className="fa fa-times" aria-hidden="true"></i>
             </button>
